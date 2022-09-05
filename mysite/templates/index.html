@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div class="card-body" style="padding: 0rem 23rem;">
+
+        <div style="color: rgb(0, 0, 1);">
+
+            <form action="{% url 'whatsapp' %}" method="POST" enctype="multipart/form-data">
+                {% csrf_token %}
+        
+                <div class="col"><label>Contact</label>
+                    <div class="col">
+                        <input type="text" class="form-control" name="contact" placeholder="contact" required="required">
+                    </div>  
+                     
+                    <br>
+                    <br>
+                
+                <div class="col"><label>Enter PDF Url</label>
+                    <div class="col">
+                        <input type="url" class="form-control" name="pdf_url" placeholder="enter pdf url" required="required">
+                    </div>  
+                        
+                    <br>
+                    <br>
+
+                {% comment %} <div class="col"><label>Choose PDF File</label>
+                    <div class="col">
+                        <input type="file" id="myFile" name="pdf" placeholder="Report Attachment" enctype="multipart/form-data">
+                    </div> {% endcomment %}
+                    
+                    <br>
+                    <br>
+                    
+        
+                    <button class="btn btn-outline-light" style="text-align: center; width: 400px;" id="entry"
+                        type="submit ">Click here for Submit</button><br>
+                </div>
+
+                <br>
+
+
+            </form>
+
+
+                
+
+                <h2><span><b>{{text}}</b></span></h2><br>
+
+                <div>
+                    <button type="submit" id="entry" class="btn btn-outline-dark"><a
+                            href="{%  url 'home' %}">Click here for refresh</a></button>
+
+                </div>
+</body>
+</html>
